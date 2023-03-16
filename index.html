@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All You Can Eat</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js" defer ></script> <!-- spiegazione defer: https://www.evemilano.com/async-defer/  -->
+
+</head>
+<body>
+    <div class="wrapper">
+        <h2>Cosa ho ordinato??</h2>
+        <ul class="piatti"> 
+            <li> Caricamento piatti... </li>
+        </ul>
+        <form class="aggiungi-piatto">
+            <!--SC:  input:text -->
+            <input type="text" name="piatto" placeholder="nome piatto" required> <!--required, significa che nin puoi lasciarlo vuoto-->
+            <input type="submit" value="+ Aggiungi piatti">
+            <!--SC:  ul>li*20{Elemento numero} -->
+                <!-- LINK EMMET MAGHEGGI: https://docs.emmet.io/cheat-sheet/  -->
+        </form>
+    </div>
+
+
+</body>
+</html>

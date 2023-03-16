@@ -1,0 +1,88 @@
+html {
+    box-sizing: border-box;
+    /*con border-box, includo padding e borderl nel conto totale di width e height*/
+    min-height: 100vh;
+    /*altezza della finestara*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: sans-serif;
+    background: url('https://images.unsplash.com/photo-1677155875750-9eb42b39f4e5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80') center no-repeat;
+    background-size: cover;
+}
+
+
+/* PSEUDOELEMENTI: Before & After
+        - float -> proprieta css per spostare elemento senza grossi sbatti (right and  left) -> esempio sposto testo su editor di testo (world)
+    -before, si posiziona immediateamente dopo l'apertura di Div
+    -after, si posiziona esattamente prima la chiusura di Div 
+    -si utilizzano per risolvere problema tabellaXsmartphone (insieme a "grid" -> che da solo si fraziona lo spazio)
+*/
+
+*, *::before,*::after {
+    box-sizing: inherit;
+    /*inherit -> tutti eriditano ciò che messo prima */
+}
+
+.wrapper {
+    padding: 20px;
+    max-width: 350px;
+    background: rgba(255, 255, 255, 0.55);
+        /* 4°valore -> opacità */
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    /* inclinazione fonte di luce */
+    border-radius: 10px;
+    /*arrotonda gli angoli*/
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(10px);
+    /*ci permette di ottenere un effetto noto come 'glassmorfismo'
+    https://hype4.academy/tools/glassmorphism-generator esempio per test (bianco effeto migliore -> effetto vetro)*/
+}
+
+h2 {
+    text-align: center;
+    margin: 0;
+    font-weight: 200;
+}
+
+.piatti {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: left;
+}
+
+.piatti li {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 10px 0;
+    font-weight: 100;
+    display: flex;
+}
+
+.piatti label {
+    flex: 1;            /* imposta 3 proprieta(grow, shrink, basis) al max (1,1,100%) */
+    cursor: pointer;
+}
+
+.piatti input {
+    display: none;
+}
+
+.piatti input + label::before {
+    content:'⬜';                /* indica che non sia arrivato ordine */
+    margin-right: 10px;
+}
+
+.piatti input:checked + label::before {
+    content: '👌';
+}
+.aggiungi-piatto{
+    margin-top: 20px;
+}
+
+.aggiungi-piatto input {
+    padding: 10px;
+    outline: 0;                     /*tolgo bordo nero di tab*/
+    border: 1px solid rgba(0, 0, 0, 0.1)
+}
